@@ -1,22 +1,27 @@
 use std::io;
 
 fn main() {
-    let a  = [1, 2, 3, 4, 5];
-
-    println!("Please enter an array index: ");
-
-    let mut index = String::new();
-
+    // FizzBuzz
+    println!("Fizz Buzz");
+    let mut x = String::new();
+    println!("Please enter number: ");
     io::stdin()
-        .read_line(&mut index)
+        .read_line(&mut x)
         .expect("Failed to read line!");
 
-    let index: usize = index    
+    let x: u32 = x
         .trim()
         .parse()
-        .expect("Index entered as not a number!");
+        .expect("Please enter a valid number!");
 
-    let elem = a[index];
+    if x % 3 == 0 && x % 5 == 0 {
+        println!("FizzBuzz");
+    } else if x % 3 == 0 {
+        println!("Fizz");
+    } else if x % 5 == 0 {
+        println!("Buzz");
+    } else {
+        println!("{x}");
+    }
 
-    println!("{elem}");
 }
