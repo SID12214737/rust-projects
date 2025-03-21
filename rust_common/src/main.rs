@@ -1,8 +1,6 @@
 fn main() {
-    let points_nothing = dangel();
-}
+    let s = String::from("hello world");
 
-fn dangel() -> &String {
-    let s = String::from("heh");
-    &s
+    let hello = &s[0..5];
+    let world = &s[6..11];
 }
