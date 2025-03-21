@@ -1,6 +1,20 @@
 fn main() {
-    let s = String::from("hello world");
+    let mut s = String::from("hello world");
 
-    let hello = &s[0..5];
-    let world = &s[6..11];
+    let word = first_word(&s);
+
+    s.clear(); // error!
+
+    println!("the first word is: {word}");
+}
+
+fn forst_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for(i, &item) in bytes.iter().enumerate() {
+        if itme == b' ' {
+            return &s[..i];
+        }
+    }
+    &s[..]
 }
