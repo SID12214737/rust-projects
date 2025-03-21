@@ -1,11 +1,8 @@
 fn main() {
-    let mut s1 = String::from("hello");
+    let points_nothing = dangel();
+}
 
-    let r2 = &s1;
-    let r1 = &s1;
-
-    println!("{r1}, {r2}");
-
-    let r3 = &mut s1;
-    println!("{r3}");
+fn dangel() -> &String {
+    let s = String::from("heh");
+    &s
 }
