@@ -1,36 +1,20 @@
-//normal structure
-struct User {
-    active: bool,
-    username: String,
-    email: String,
-    sign_in_count: u64,
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
 }
 
-//tuple struct
-struct Color(i32, i32, i32);
-struct Point(i32, i32, i32);
-
-//unit-like struct
-struct AlwaysEqual;
-
 fn main() {
-    let user1 = User {
-        active: true,
-        username: String::from("me"),
-        email: String::from("mail@mail.com"),
-        sign_in_count: 0,    
+    let scale = 2;
+    let rect1 = Rectangle{
+        width: dbg!(30 * 2),
+        height: 50
     };
+    dbg!(&rect1);
+    println!("rect is {rect1:#?}");
+    
+}
 
-    let user2 = User {
-        active: false,
-        email: String::from("mail"),
-        ..user1
-    };
-    // we can access email bs we dont unpack/move it to new user 
-    println!("{}", user1.email);
-
-    let black = Color(0, 0, 0);
-    let origin = Point(0, 0, 0);
-
-    let subject = AlwaysEqual;
+fn area(width: u32, height: u32) -> u32 {
+    width * height
 }
