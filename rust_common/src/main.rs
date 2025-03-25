@@ -1,20 +1,23 @@
-fn main() {
-    let mut s = String::from("hello world");
-
-    let word = first_word(&s);
-
-    s.clear(); // error!
-
-    println!("the first word is: {word}");
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
 }
 
-fn forst_word(s: &String) -> &str {
-    let bytes = s.as_bytes();
+fn main() {
+    let user1 = User {
+        active: true,
+        username: String::from("me"),
+        email: String::from("mail@mail.com"),
+        sign_in_count: 0,    
+    };
 
-    for(i, &item) in bytes.iter().enumerate() {
-        if itme == b' ' {
-            return &s[..i];
-        }
-    }
-    &s[..]
+    let user2 = User {
+        active: false,
+        email: String::from("mail"),
+        ..user1
+    };
+
+    println!("{}", user1.email);
 }
