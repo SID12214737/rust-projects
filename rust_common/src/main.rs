@@ -1,47 +1,17 @@
-#[derive(Debug)]
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
-
-impl Rectangle {
-    fn area(&self) -> u32 {
-        self.width * self.height
-    }
-
-    fn width(&self) -> bool {
-        self.width > 0
-    }
-
-    fn can_hold(&self, rect: &Rectangle) -> bool {
-        self.width > rect.width && self.height > rect.height
-    }
-
-    fn square(size: u32) -> Self {
-        Self { 
-            width: size, 
-            height: size,
-        }
-    }
+enum IpAddrKind {
+    v4(String),
+    v6(String),
 }
 
 fn main() {
-    let rect1 = Rectangle {
-        width: 30,
-        height: 50,
-    };
+    let four = IpAddrKind::v4;
+    let six = IpAddrKind::v6;
+    
+    let home = IpAddr::V4(String::from("127.0.0.1"));
 
-    let rect2 = Rectangle {
-        width: 10,
-        height: 40,
-    };
+    let loopback = IpAddr::V6(String::from("::1"));
 
-    let rect3 = Rectangle {
-        width: 60,
-        height: 45,
-    };
-
-    println!("{}", rect1.can_hold(&rect2));
-    println!("{}", rect1.can_hold(&rect3));
 
 }
+
+fn route(ip_kind: IpAddrKind) {}
